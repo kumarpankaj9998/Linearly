@@ -6,9 +6,9 @@ A Defi platform in which Linear token can be purchased and it's price will be pr
 
 ## This is a fullStack dApp ,which uses the following stack
  
-**Next JS**     - As a frontend development framework
- **Chakra UI**   - A Library for premade frontend components and styling
- **Remix IDE**   - An Online compiler for compiling and deploying our Smart contract
- **Solidity**    - The language for writing our smart contract
- **Polygon**     - The fastest and cheapest EVM blockchain to build upon.
- **Metamask**    - Our crypto wallet for the Purchase and Selling of our tokens.
+- **Next JS**     - As a frontend development framework
+ - **Chakra UI**   - A Library for premade frontend components and styling
+ - **Remix IDE**   - An Online compiler for compiling and deploying our Smart contract
+ - **Solidity**    - The language for writing our smart contract
+ - **Polygon**     - The fastest and cheapest EVM blockchain to build upon.
+  - **Metamask**    - Our crypto wallet for the Purchase and Selling of our tokens.
