@@ -19,3 +19,31 @@ pragma solidity 0.8.7;
     }
     
     
+function getTokenPrice() public view returns (uint256) {
+        uint256 tokenPrice = (slope * tokenNumber * 10**18) + baseFee;
+        return tokenPrice;
+    }
+
+
+ function buyToken() public payable {
+        require(
+            msg.value >= getTokenPrice(),
+            "Insufficient Funds for purchasing token"
+        );
+        _mint(msg.sender, 1);
+        tokenNumber++;
+    }
+
+
+
+    function sellToken() public payable {
+        require(balanceOf(msg.sender) > 0, "You do not have tokens to sell");
+        tokenNumber--;
+        uint256 tokenPrice = getTokenPrice();
+        _spendAllowance(msg.sender, address(this), 1);
+        _burn(msg.sender, 1);
+        (bool sent, bytes memory data) = payable(msg.sender).call{
+            value: tokenPrice
+        }("");
+        require(sent, "Failed to send Funds");
+    }
